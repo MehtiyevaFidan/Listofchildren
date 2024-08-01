@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #941414;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f1f50bb4;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h2>cedvel</h2>
+        <label for="ad">Ad:</label>
+        <input type="text" id="ad">
+        <label for="soyad">Soyad:</label>
+        <input type="text" id="soyad">
+        <label for="yas">Yaş:</label>
+        <input type="number" id="yas">
+        <button onclick="tesdiqle()">tesdiqle</button>
+        <table id="siyahi">
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Yaş</th>
+            </tr>
+        </table>
+        <script>
+            function tesdiqle() {
+                let ad = document.getElementById("ad").value;
+                let soyad = document.getElementById("soyad").value;
+                let yas = document.getElementById("yas").value;
+                let table = document.getElementById("siyahi");
+                if (ad === "" || soyad === "" || yas === "") {
+                    document.querySelectorAll("input").value = "";
+                    return;
+                }
+                    let row = table.insertRow(1);
+                    let cell1 = row.insertCell(0);
+                    let cell2 = row.insertCell(1);
+                    let cell3 = row.insertCell(2);
+                    cell1.innerHTML = ad;
+                    cell2.innerHTML = soyad;
+                    cell3.innerHTML = yas;
+                    document.getElementById("ad").value = "";
+                    document.getElementById("soyad").value = "";
+                    document.getElementById("yas").value = "";
+            }
+        </script>
+    </body>
+
+</html>
